@@ -1,9 +1,13 @@
 #ifndef GLSLSHADER_HPP
 #define GLSLSHADER_HPP
 
+#include <memory>
 #include <string>
 
 #include "gl_core_3_3.h"
+
+
+class GLSLShaderImpl;
 
 
 class GLSLShader {
@@ -11,19 +15,13 @@ public:
     static GLSLShader from_file(const std::string& path, GLenum type);
     static GLSLShader from_string(const std::string& code, GLenum type);
 
-    GLSLShader(const GLSLShader& other) = delete;
-    GLSLShader(GLSLShader&& other);
-
-    ~GLSLShader();
-
-    GLuint get_id() const { return id_; }
-    GLenum get_type() const { return type_; }
+    GLuint get_id() const;
+    GLenum get_type() const;
 
 private:
     GLSLShader(const std::string& code, GLenum type);
 
-    GLuint id_;
-    GLenum type_;
+    std::shared_ptr<GLSLShaderImpl> impl_;
 };
 
 

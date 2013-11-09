@@ -75,10 +75,8 @@ int main(int argc, char *argv[]) {
     glGenBuffers(1, &vertex_buffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertex_position_data), vertex_position_data, GL_STATIC_DRAW);
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
 
     // specify layout of the vbo data
-    glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
     glEnableVertexAttribArray(0);
     glVertexAttribPointer(
             0,          // attribute 0
@@ -88,6 +86,8 @@ int main(int argc, char *argv[]) {
             0,          // stride
             (void *)0   // array buffer offset
     );
+    glBindVertexArray(0);
+    glBindBuffer(GL_ARRAY_BUFFER, 0);
 
 
     glClearColor(0.75f, 0.75f, 0.75f, 0.0f);
@@ -98,7 +98,7 @@ int main(int argc, char *argv[]) {
         glClear(GL_COLOR_BUFFER_BIT);
 
         // draw the triangle (3 vertices)
-        glBindBuffer(GL_ARRAY_BUFFER, vertex_buffer);
+        glBindVertexArray(vertex_array_id);
         glDrawArrays(GL_TRIANGLES, 0, 3);
 
         // swap buffers

@@ -44,7 +44,7 @@ int main(int argc, char *argv[]) {
         exit(EXIT_FAILURE);
     }
 
-    window = glfwCreateWindow(512, 512, window_title, NULL, NULL);
+    window = glfwCreateWindow(32, 32, window_title, NULL, NULL);
     if (!window) {
         glfwTerminate();
         exit(EXIT_FAILURE);
