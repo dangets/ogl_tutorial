@@ -10,6 +10,7 @@
 
 #include "GLSLProgram.hpp"
 #include "GLSLShader.hpp"
+#include "Model.hpp"
 
 
 static void error_callback(int error, const char * description) {
@@ -58,6 +59,7 @@ int main(int argc, char *argv[]) {
     prog.attach(frag);
     prog.link();
 
+    Model m = Model::load_from_file();
 
     glClearColor(0.75f, 0.75f, 0.75f, 0.0f);
     glUseProgram(prog.get_id());
@@ -66,13 +68,12 @@ int main(int argc, char *argv[]) {
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT);
 
+        m.render();
+
         // swap buffers
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
-
-    glDeleteBuffers(1, &vertex_buffer);
-    glDeleteVertexArrays(1, &vertex_array_id);
 
     glfwDestroyWindow(window);
     glfwTerminate();

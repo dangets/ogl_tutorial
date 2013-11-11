@@ -67,3 +67,6 @@ target_link_libraries(dump_gl_info ${OGL_TUTORIAL_LIBS})
 add_executable(triangle_2d triangle_2d.cpp)
 target_link_libraries(triangle_2d ${OGL_TUTORIAL_LIBS})
 
+add_executable(triangle_2d_model triangle_2d_model.cpp)
+target_link_libraries(triangle_2d_model ${OGL_TUTORIAL_LIBS})
+

@@ -70,9 +70,9 @@ GLSLShader GLSLShader::from_string(const std::string& code, GLenum type) {
     return GLSLShader(code, type);
 }
 
+
 GLSLShader::GLSLShader(const std::string& code, GLenum type) :
     impl_(std::make_shared<GLSLShaderImpl>(code, type)) { }
 
 GLuint GLSLShader::get_id() const { return impl_->id_; }
 GLenum GLSLShader::get_type() const { return impl_->type_; }
-

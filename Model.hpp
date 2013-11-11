@@ -1,17 +1,21 @@
 #ifndef MODEL_HPP
 #define MODEL_HPP
 
+#include "gl_core_3_3.h"
+#include <GLFW/glfw3.h>
+
 
 class Model
 {
 public:
-    static Model load_from_file(const char *fname) {
+    //static Model load_from_file(const char *fname) {
+    static Model load_from_file() {
         Model m;
-        m.load(fname);
+        m.load();
         return m;
     }
 
-    void load(const char *fname) {
+    void load() {
         // cleanup any existing buffers (NOOP if they are 0)
         glDeleteBuffers(1, &vertex_buffer_obj);
         glDeleteBuffers(1, &index_buffer_obj);
@@ -24,7 +28,7 @@ public:
              0.0f,  1.0f, 0.0f,
         };
 
-        size_t num_verts = 3;
+        num_verts = 3;
         size_t num_components = 3;      // position x, y, z
         GLenum attr_type = GL_FLOAT;
         GLboolean attr_normalized = GL_FALSE;
@@ -62,11 +66,16 @@ public:
         glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
     }
 
-
     void render() {
         glBindVertexArray(vertex_array_obj);
         glDrawArrays(GL_TRIANGLES, 0, num_verts);
         glBindVertexArray(0);
+    }
+
+    ~Model() {
+        //glDeleteBuffers(1, &vertex_buffer_obj);
+        //glDeleteBuffers(1, &index_buffer_obj);
+        //glDeleteVertexArrays(1, &vertex_array_obj);
     }
 
 private:
@@ -77,6 +86,7 @@ private:
     GLuint index_buffer_obj;
     GLuint vertex_array_obj;
 
+    GLuint num_verts;
     GLuint num_indices;
     GLuint index_type;          // the size of the index data (one of GL_UNSIGNED_{BYTE,SHORT,INT})
 };
