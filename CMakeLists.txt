@@ -56,7 +56,7 @@ if(UNIX)
 endif()
 
 
-add_library(ogl_tutorial STATIC GLSLShader.cpp GLSLProgram.cpp)
+add_library(ogl_tutorial STATIC GLSLShader.cpp GLSLProgram.cpp Model.cpp)
 list(APPEND OGL_TUTORIAL_LIBS ogl_tutorial)
 
 include_directories(${OGL_TUTORIAL_INCLUDES})
