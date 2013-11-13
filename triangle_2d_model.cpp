@@ -64,7 +64,11 @@ int main(int argc, char *argv[]) {
     glClearColor(0.75f, 0.75f, 0.75f, 0.0f);
     glUseProgram(prog.get_id());
 
+    double time = glfwGetTime();
+
     while (!glfwWindowShouldClose(window)) {
+        time = glfwGetTime();
+
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT);
 
