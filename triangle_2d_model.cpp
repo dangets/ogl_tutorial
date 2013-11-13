@@ -10,7 +10,7 @@
 
 #include "GLSLProgram.hpp"
 #include "GLSLShader.hpp"
-#include "Model.hpp"
+#include "TriangleModel.hpp"
 
 
 static void error_callback(int error, const char * description) {
@@ -59,12 +59,11 @@ int main(int argc, char *argv[]) {
     prog.attach(frag);
     prog.link();
 
-    Model m = Model::load_from_file();
+    TriangleModel m = TriangleModel::load_from_file();
+    double time = glfwGetTime();
 
     glClearColor(0.75f, 0.75f, 0.75f, 0.0f);
     glUseProgram(prog.get_id());
-
-    double time = glfwGetTime();
 
     while (!glfwWindowShouldClose(window)) {
         time = glfwGetTime();

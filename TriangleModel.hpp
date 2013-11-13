@@ -1,16 +1,17 @@
-#ifndef MODEL_HPP
-#define MODEL_HPP
+#ifndef TRIANGLEMODEL_HPP
+#define TRIANGLEMODEL_HPP
+
 
 #include "gl_core_3_3.h"
 #include <GLFW/glfw3.h>
 
 
-class Model
+class TriangleModel
 {
 public:
-    //static Model load_from_file(const char *fname) {
-    static Model load_from_file();
-    ~Model();
+    //static TriangleModel load_from_file(const char *fname) {
+    static TriangleModel load_from_file();
+    ~TriangleModel();
 
     void load();
 
@@ -18,7 +19,7 @@ public:
 
 
 private:
-    Model();
+    TriangleModel();
 
     GLuint vertex_buffer_obj;
     GLuint index_buffer_obj;
@@ -30,4 +31,4 @@ private:
 };
 
 
-#endif /* end of include guard: MODEL_HPP */
+#endif /* end of include guard: TRIANGLEMODEL_HPP */
