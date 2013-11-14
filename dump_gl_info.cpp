@@ -53,7 +53,7 @@ int main(int argc, char *argv[]) {
     glfwMakeContextCurrent(window);
 
     // Load the OpenGL functions
-	if(ogl_LoadFunctions() == ogl_LOAD_FAILED) {
+	if (ogl_LoadFunctions() == ogl_LOAD_FAILED) {
         fprintf(stderr, "Failed call to ogl_LoadFunctions\n");
 		glfwTerminate();
 		exit(EXIT_FAILURE);

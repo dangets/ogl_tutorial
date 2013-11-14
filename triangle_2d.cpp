@@ -3,13 +3,7 @@
 
 #include <string>
 
-#include "gl_core_3_3.h"
-
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-
-#include "GLSLProgram.hpp"
-#include "GLSLShader.hpp"
+#include "ogl_headers.hpp"
 
 
 static void error_callback(int error, const char * description) {

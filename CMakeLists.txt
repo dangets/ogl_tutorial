@@ -56,10 +56,21 @@ if(UNIX)
 endif()
 
 
-add_library(ogl_tutorial STATIC GLSLShader.cpp GLSLProgram.cpp TriangleModel.cpp)
+add_library(ogl_tutorial STATIC
+	utils.cpp
+	ogl_headers.cpp
+	GLSLShader.cpp
+	GLSLProgram.cpp
+	Model.cpp
+	TriangleModel.cpp
+	gl_core_3_3
+)
 list(APPEND OGL_TUTORIAL_LIBS ogl_tutorial)
 
 include_directories(${OGL_TUTORIAL_INCLUDES})
+
+add_executable(test_Model test_Model.cpp)
+target_link_libraries(test_Model ${OGL_TUTORIAL_LIBS})
 
 add_executable(dump_gl_info dump_gl_info.cpp)
 target_link_libraries(dump_gl_info ${OGL_TUTORIAL_LIBS})

@@ -1,10 +1,7 @@
 #ifndef TRIANGLEMODEL_HPP
 #define TRIANGLEMODEL_HPP
 
-
-#include "gl_core_3_3.h"
-#include <GLFW/glfw3.h>
-
+#include "ogl_headers.hpp"
 
 class TriangleModel
 {

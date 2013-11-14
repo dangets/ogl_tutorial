@@ -3,23 +3,7 @@
 #include <fstream>
 #include <stdexcept>
 
-
-static std::string read_file_to_string(const std::string& path) {
-    std::ifstream ins(path, std::ios::in | std::ios::binary);
-    if (ins) {
-        std::string contents;
-        // resize string to size of file
-        ins.seekg(0, std::ios::end);
-        contents.resize(ins.tellg());
-        ins.seekg(0, std::ios::beg);
-        ins.read(&contents[0], contents.size());
-        ins.close();
-
-        return contents;
-    }
-
-    throw(errno);
-}
+#include "utils.hpp"
 
 
 class GLSLShaderImpl {

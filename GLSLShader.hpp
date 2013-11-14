@@ -1,10 +1,10 @@
+#include "ogl_headers.hpp"
+
 #ifndef GLSLSHADER_HPP
 #define GLSLSHADER_HPP
 
 #include <memory>
 #include <string>
-
-#include "gl_core_3_3.h"
 
 
 class GLSLShaderImpl;

@@ -1,9 +1,7 @@
+#include "ogl_headers.hpp"
+
 #ifndef GLSLPROGRAM_HPP
 #define GLSLPROGRAM_HPP
-
-#include "gl_core_3_3.h"
-
-#include "GLSLShader.hpp"
 
 class GLSLProgram
 {
