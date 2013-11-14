@@ -72,6 +72,9 @@ include_directories(${OGL_TUTORIAL_INCLUDES})
 add_executable(test_Model test_Model.cpp)
 target_link_libraries(test_Model ${OGL_TUTORIAL_LIBS})
 
+add_executable(test_Shader test_Shader.cpp)
+target_link_libraries(test_Shader ${OGL_TUTORIAL_LIBS})
+
 add_executable(dump_gl_info dump_gl_info.cpp)
 target_link_libraries(dump_gl_info ${OGL_TUTORIAL_LIBS})
 
