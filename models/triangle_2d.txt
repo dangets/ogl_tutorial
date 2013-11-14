@@ -1,0 +1,14 @@
+# num verts
+3
+
+# num attributes
+1
+
+# attr_id, num_components, type, normalized, stride, offset
+
+0, 3, GL_FLOAT, false, 0, 0
+
+# data
+-1.0 -1.0  0.0
+ 1.0 -1.0  0.0
+ 0.0  1.0  0.0

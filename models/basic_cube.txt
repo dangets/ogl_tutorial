@@ -1,0 +1,5 @@
+# num_verts
+8
+
+# components / stride
+3
